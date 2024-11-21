@@ -1,0 +1,56 @@
+body {
+  font-family: Arial;
+  display: flex; 
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  margin: 0;
+  padding: 0
+}
+  
+.card {
+  border: 1px solid #CCC;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.card.full {
+  max-width: 400px;
+}
+
+h1 {
+  color: #69C8EC;
+  margin: 24px 0;
+}
+
+h2 {
+  color: #69C8EC;
+  text-align: center;
+}
+
+h3 {
+  color: #24325F;
+}
+
+ul {
+  color: #24325F;
+}
+
+.parent {
+  max-width: 1000px;
+  display: flex; /* Aligns the children items in a row direction */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px; /* Adds space between child elements */
+}
+
+.child {
+  display: flex;         
+  flex: 1 1 calc(50% - 24px); /* Two items per row */
+  gap: 24px; 
+  max-width: 300px; 
+  padding: 24px;
+}
+
+.child img {
+  width: 100px;
+}
