@@ -15,6 +15,7 @@ body {
 
 .card.full {
   max-width: 400px;
+  margin: 24px;
 }
 
 h1 {
@@ -47,7 +48,7 @@ ul {
   display: flex;         
   flex: 1 1 calc(50% - 24px); /* Two items per row */
   gap: 24px; 
-  max-width: 300px; 
+  width: 400px; 
   padding: 24px;
 }
 
