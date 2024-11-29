@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "id": 1,
+            "name": "Rick Sanchez",
+            "status": "Alive",
+            "species": "Human",
+            "origin": {
+                "name": "Earth (C-137)"
+            },
+            "image": "../Assets/rick.jpeg",
+            "link": "../Month 1, Week 3/character_card_rick.html"
+        },
+        {
+            "id": 2,
+            "name": "Morty Smith",
+            "status": "Alive",
+            "species": "Human",
+            "origin": {
+                "name": "unknown"
+            },
+            "image": "../Assets/morty.jpeg",
+            "link": "../Month 1, Week 3/character_card_morty.html"
+        },
+        {
+            "id": 3,
+            "name": "Summer Smith",
+            "status": "Alive",
+            "species": "Human",
+            "origin": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "../Assets/summer.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Beth Smith",
+            "status": "Alive",
+            "species": "Human",
+            "origin": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "../Assets/beth.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "Jerry Smith",
+            "status": "Alive",
+            "species": "Human",
+            "origin": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "../Assets/jerry.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "Abadango Cluster Princess",
+            "status": "Alive",
+            "species": "Alien",
+            "origin": {
+                "name": "Abadango"
+            },
+            "image": "../Assets/abadango.jpeg"
+        }
+    ]
+}
