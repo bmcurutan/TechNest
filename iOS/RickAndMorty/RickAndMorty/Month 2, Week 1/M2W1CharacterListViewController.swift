@@ -1,5 +1,5 @@
 //
-//  M1W4CharacterListViewController.swift
+//  M2W1CharacterListViewController.swift
 //  RickAndMorty
 //
 //  Created by Bianca Curutan on 12/9/24.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class M1W4CharacterListViewController: UIViewController {
+class M2W1CharacterListViewController: UIViewController {
 
-    let viewModel = M1W4CharacterViewModel()
+    let viewModel = M2W1CharacterViewModel()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -40,7 +40,13 @@ class M1W4CharacterListViewController: UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(M1W4CharacterCollectionViewCell.self, forCellWithReuseIdentifier: "M1W4CharacterCollectionViewCell")
+        collectionView.register(M2W1CharacterCollectionViewCell.self, forCellWithReuseIdentifier: "M2W1CharacterCollectionViewCell")
+
+        viewModel.loadCharacters { [weak self] result in
+            if result {
+                self?.collectionView.reloadData()
+            }
+        }
     }
 
     private func setupViews() {
@@ -63,10 +69,10 @@ class M1W4CharacterListViewController: UIViewController {
     }
 }
 
-extension M1W4CharacterListViewController: UICollectionViewDataSource {
+extension M2W1CharacterListViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "M1W4CharacterCollectionViewCell", for: indexPath) as? M1W4CharacterCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "M2W1CharacterCollectionViewCell", for: indexPath) as? M2W1CharacterCollectionViewCell else { return UICollectionViewCell() }
 
         let character = viewModel.characters[indexPath.row]
         cell.character = character
@@ -78,10 +84,10 @@ extension M1W4CharacterListViewController: UICollectionViewDataSource {
     }
 }
 
-extension M1W4CharacterListViewController: UICollectionViewDelegate {
+extension M2W1CharacterListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let character = viewModel.characters[indexPath.row]
-        let viewController = M1W4CharacterDetailsViewController()
+        let viewController = M2W1CharacterDetailsViewController()
         viewController.character = character
         present(viewController, animated: true)
     }
