@@ -1,5 +1,5 @@
 //
-//  M2W1CharacterDetailsViewController.swift
+//  M2W2CharacterDetailsViewController.swift
 //  RickAndMorty
 //
 //  Created by Bianca Curutan on 12/9/24.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class M2W1CharacterDetailsViewController: UIViewController {
+class M2W2CharacterDetailsViewController: UIViewController {
 
     var character: M2W1Character? {
         didSet {
             guard let character else { return }
             nameLabel.text = character.name
-            imageView.image = UIImage(named: character.image)
+            imageView.loadImage(character.image)
 
             let statusLabel = M1W4PropertyLabel(boldText: "Status", normalText: character.status)
             stackView.addArrangedSubview(statusLabel)

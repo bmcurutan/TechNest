@@ -14,12 +14,10 @@ class M2W1CharacterViewModel {
     private(set) var characters: [M2W1Character] = []
     let title = "Rick & Morty Character Database"
     
-    func loadCharacters(completion: @escaping (Bool) -> Void) {
+    func loadCharacters(completion: @escaping () -> Void) {
         if let characters = service.fetchLocalCharacters() {
             self.characters = characters
-            completion(true)
-        } else {
-            completion(false)
         }
+        completion()
     }
 }

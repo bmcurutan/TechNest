@@ -11,7 +11,7 @@
         <!--Character List View Controller-->
         <scene sceneID="7Yl-9U-osl">
             <objects>
-                <viewController id="C64-T0-iuh" customClass="M2W1CharacterListViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C64-T0-iuh" customClass="M2W2CharacterListViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RnF-fj-FU5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

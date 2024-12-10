@@ -1,5 +1,5 @@
 //
-//  M2W1CharacterListViewController.swift
+//  M2W2CharacterListViewController.swift
 //  RickAndMorty
 //
 //  Created by Bianca Curutan on 12/9/24.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class M2W1CharacterListViewController: UIViewController {
+class M2W2CharacterListViewController: UIViewController {
 
-    let viewModel = M2W1CharacterViewModel()
+    let viewModel = M2W2CharacterViewModel()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -40,7 +40,7 @@ class M2W1CharacterListViewController: UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(M2W1CharacterCollectionViewCell.self, forCellWithReuseIdentifier: "M2W1CharacterCollectionViewCell")
+        collectionView.register(M2W2CharacterCollectionViewCell.self, forCellWithReuseIdentifier: "M2W2CharacterCollectionViewCell")
 
         viewModel.loadCharacters {
             DispatchQueue.main.async { [weak self] in
@@ -69,10 +69,10 @@ class M2W1CharacterListViewController: UIViewController {
     }
 }
 
-extension M2W1CharacterListViewController: UICollectionViewDataSource {
+extension M2W2CharacterListViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "M2W1CharacterCollectionViewCell", for: indexPath) as? M2W1CharacterCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "M2W2CharacterCollectionViewCell", for: indexPath) as? M2W2CharacterCollectionViewCell else { return UICollectionViewCell() }
 
         let character = viewModel.characters[indexPath.row]
         cell.character = character
@@ -84,10 +84,10 @@ extension M2W1CharacterListViewController: UICollectionViewDataSource {
     }
 }
 
-extension M2W1CharacterListViewController: UICollectionViewDelegate {
+extension M2W2CharacterListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let character = viewModel.characters[indexPath.row]
-        let viewController = M2W1CharacterDetailsViewController()
+        let viewController = M2W2CharacterDetailsViewController()
         viewController.character = character
         present(viewController, animated: true)
     }
