@@ -1,7 +1,6 @@
 $(document).ready(function() {
+    
     $.getJSON("./characters.json", function(data) {
-        console.log(data);
-
         data.results.forEach(function(character) {
 
             var $cardLink = $("<a></a>", {
@@ -25,6 +24,7 @@ $(document).ready(function() {
             $cardLink.append($cardDiv);
             $("#cards_container").append($cardLink);
         });
+
     }).fail(function() {
         console.error("Error loading JSON");
     });
