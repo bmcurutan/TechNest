@@ -77,7 +77,7 @@ $(document).ready(function () {
   const urlParams = new URLSearchParams(window.location.search);
   const characterId = urlParams.get("characterId");
 
-  if (page == "character_card.html" && characterId) {
+  if (page === "character_card.html" && characterId) {
     fetchCharacters(characterId);
   } else {
     fetchCharacters("");
