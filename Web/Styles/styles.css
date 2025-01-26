@@ -64,3 +64,11 @@ ul {
     width: 300px;
   }
 }
+
+#search_bar {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 0 0 24px;
+  width: 300px;
+}
