@@ -13,6 +13,10 @@ body {
   padding: 24px;
 }
 
+a:hover .card  {
+  background-color: #69c8ec;
+}
+
 .card.full {
   max-width: 400px;
   margin: 24px;
@@ -34,6 +38,10 @@ h3 {
 
 ul {
   color: #24325f;
+}
+
+a { 
+  text-decoration: none;
 }
 
 .parent {
@@ -71,4 +79,21 @@ ul {
   border-radius: 8px;
   margin: 0 0 24px;
   width: 300px;
+}
+
+.pagination {
+  margin: 0 0 24px;
+}
+
+.pagination a {
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #24325f;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.pagination a:hover {
+  background-color: #69c8ec;
+  color: #24325f;
 }
