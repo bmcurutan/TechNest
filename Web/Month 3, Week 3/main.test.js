@@ -1,6 +1,40 @@
 const { JSDOM } = require("jsdom");
 const jQuery = require("jquery"); 
-const { renderPages, renderCharacterDetails } = require("./main"); 
+const { fetchCharacters, renderPages, renderCharacterDetails } = require("./main"); 
+
+global.fetch = jest.fn(() =>
+    Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ results: [], info: { pages: 1 } }),
+    })
+  );
+  
+  describe('fetchCharacters', () => {
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+  
+    it('calls fetch and handles response with characterId', () => {
+      const characterId = 1;
+      const pageNum = 2;
+  
+      fetchCharacters(characterId, pageNum);
+  
+      expect(fetch).toHaveBeenCalledWith(
+        `https://rickandmortyapi.com/api/character/${characterId}?page=${pageNum}`
+      );
+    });
+  
+    it('calls fetch and handles response without characterId', () => {
+      const pageNum = 2;
+  
+      fetchCharacters(null, pageNum);
+  
+      expect(fetch).toHaveBeenCalledWith(
+        `https://rickandmortyapi.com/api/character/null?page=${pageNum}`
+      );
+    });
+  });
 
 describe("renderPages", () => {
   let $;
@@ -79,3 +113,5 @@ describe('renderCharacterDetails', () => {
     expect(listItems[2].textContent).toBe('Status: Earth');
   });
 });
+
+// Other test cases to add: fetchCharacters "Network response not OK", renderCharactersCollection

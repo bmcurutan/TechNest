@@ -126,4 +126,4 @@ if (typeof window !== "undefined") {
   });
 }
 
-module.exports = { renderPages, renderCharacterDetails };
+module.exports = { fetchCharacters, renderPages, renderCharacterDetails };
