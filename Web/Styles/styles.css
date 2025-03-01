@@ -93,6 +93,7 @@ a {
   border-radius: 8px;
   transition: 0.3s;
 }
+
 .pagination a:hover {
   background-color: #69c8ec;
   color: #24325f;
